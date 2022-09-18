@@ -1,9 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ObjectID } from 'mongodb';
+import { Column, Entity, ObjectIdColumn } from 'typeorm';
 
 @Entity()
 export class Film {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @ObjectIdColumn()
+    _id?: ObjectID = new ObjectID();
 
     @Column()
     name: string;

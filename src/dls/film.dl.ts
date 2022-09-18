@@ -11,8 +11,7 @@ export class FilmDL {
     ) { }
     async insertFilmAsync(): Promise<string> {
         const f: Film = {
-            id: 1,
-            name: 'huy'
+            name: 'huy11'
         }
         const res = await this.filmsRepository.insert(f);
         console.log(res);

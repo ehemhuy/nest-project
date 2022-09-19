@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Film } from './entities/film/film';
 import { FilmDL } from './dls/film.dl';
 import { ConfigModule } from '@nestjs/config';
+import { FilmJob } from './jobs/films.job';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { ConfigModule } from '@nestjs/config';
     AppService,
     FilmBL,
     BaseMongoDL,
-    FilmDL],
+    FilmDL,
+    FilmJob],
 })
 export class AppModule { }

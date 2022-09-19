@@ -7,5 +7,14 @@ export class Film {
     _id?: ObjectID = new ObjectID();
 
     @Column()
-    name: string;
+    filmId: string;
+
+    @Column()
+    title: string;
+
+    @Column()
+    imgUrl: string;
+
+    @Column()
+    createdDate: Date;
 }

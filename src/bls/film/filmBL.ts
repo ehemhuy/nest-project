@@ -15,7 +15,7 @@ export class FilmBL {
   }
 
   async getPagingAsync(): Promise<string> {
-    return await this._filmDL.insertFilmAsync();
-    // return await this._baseMongoDL.getPagingAsync();
+    await this._filmDL.insertFilmAsync();
+    return '';
   }
 }

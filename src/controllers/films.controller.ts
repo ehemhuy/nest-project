@@ -1,3 +1,4 @@
+import { Film } from './../entities/film/film';
 import { FilmBL } from './../bls/film/filmBL';
 import { Controller, Get, Req } from '@nestjs/common';
 import { Request } from 'express';
@@ -9,7 +10,11 @@ export class FilmsController {
     this._filmBL = filmBL
   }
   @Get()
-  async findAll(@Req() request: Request): Promise<string> {
-    return await this._filmBL.getPagingAsync();
+  async findAll(@Req() request: Request): Promise<Array<Film>> {
+    try {
+      return await this._filmBL.getPagingAsync();
+    } catch (error) {
+
+    }
   }
 }

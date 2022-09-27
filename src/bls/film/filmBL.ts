@@ -1,3 +1,4 @@
+import { Film } from './../../entities/film/film';
 import { BaseMongoDL } from './../../dls/baseMongoDL';
 import { Injectable } from "@nestjs/common";
 import { FilmDL } from 'src/dls/film.dl';
@@ -14,8 +15,7 @@ export class FilmBL {
     this._filmDL = filmDL
   }
 
-  async getPagingAsync(): Promise<string> {
-    await this._filmDL.insertFilmAsync();
-    return '';
+  async getPagingAsync(): Promise<Array<Film>> {
+    return await this._filmDL.getFilmPagingAsync();
   }
 }

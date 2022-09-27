@@ -18,4 +18,8 @@ export class FilmDL {
         const res = count > 0
         return res;
     }
+
+    async getFilmPagingAsync(): Promise<Array<Film>> {
+        return await this.filmsRepository.find();
+    }
 }
